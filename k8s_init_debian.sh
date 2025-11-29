@@ -32,8 +32,8 @@ if [ "$(id -u)" -ne 0 ]; then
   exit 1
 fi
 
-if ! grep -q "Debian" /etc/os-release; then
-  err "错误：这个脚本只适用于 Debian 系统。"
+if ! grep -q -E "Debian|Ubuntu" /etc/os-release; then
+  err "错误：这个脚本只适用于 Debian和Ubuntu 系统。"
   exit 1
 fi
 
